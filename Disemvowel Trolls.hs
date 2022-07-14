@@ -7,12 +7,5 @@ For example, the string "This website is for losers LOL!" would become "Ths wbst
 Note: for this kata y isn't considered a vowel.
 -}
 
--- my straightforward solution
 disemvowel :: String -> String
-disemvowel str = filter (\x -> not $ elem x "aeuoiAEUOI") str
-
--- normal solution
-disemvowel :: String -> String
-disemvowel str = filter (`notElem` "aeuoiAEUOI") str
-
--- pointless style is unintuitive
+disemvowel str = filter (flip notElem "aeuoiAEUOI") str
